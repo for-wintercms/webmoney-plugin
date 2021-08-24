@@ -1,0 +1,14 @@
+{
+    "name": "ds/webmoney",
+    "description": "Webmoney API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DiamondSystems",
+            "email": "me@diamondsystems.org"
+        }
+    ],
+    "require": {
+        "baibaratsky/php-webmoney": "^0.18.2"
+    }
+}
