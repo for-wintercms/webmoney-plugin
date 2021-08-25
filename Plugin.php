@@ -1,6 +1,6 @@
 <?php
 
-namespace DS\Webmoney;
+namespace DS\WebMoney;
 
 use Backend;
 use System\Classes\PluginBase;
@@ -18,8 +18,8 @@ class Plugin extends PluginBase
     public function pluginDetails()
     {
         return [
-            'name'        => 'Webmoney API',
-            'description' => 'Webmoney API plugin',
+            'name'        => 'WebMoney API',
+            'description' => 'WebMoney API plugin',
             'author'      => 'DS',
             'icon'        => 'icon-leaf'
         ];
