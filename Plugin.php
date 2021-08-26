@@ -3,6 +3,7 @@
 namespace DS\WebMoney;
 
 use Backend;
+use DS\WebMoney\Components\WmMerchantComponent;
 use System\Classes\PluginBase;
 
 /**
@@ -22,6 +23,13 @@ class Plugin extends PluginBase
             'description' => 'WebMoney API plugin',
             'author'      => 'DS',
             'icon'        => 'icon-leaf'
+        ];
+    }
+
+    public function registerComponents()
+    {
+        return [
+            WmMerchantComponent::class => 'wmMerchant'
         ];
     }
 }
