@@ -26,6 +26,13 @@ class WmMerchant extends Model
         'deleted_at',
     ];
 
+    protected $jsonable = [
+        'payment_request_data',
+        'prerequest_data',
+        'payment_success_data',
+        'payment_error_data',
+    ];
+
     /**
      * @var string The database table used by the model.
      */
