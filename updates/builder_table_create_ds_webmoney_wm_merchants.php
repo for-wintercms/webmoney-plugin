@@ -18,7 +18,11 @@ class BuilderTableCreateDsWebmoneyWmMerchants extends Migration
             $table->decimal('payment_amount', 7, 2);
             $table->string('payment_desc', 256);
             $table->smallInteger('pay_step')->unsigned();
-            $table->smallInteger('sim_mode')->unsigned()->nullable();
+            $table->smallInteger('payment_mode')->nullable();
+            $table->text('payment_request_data')->nullable();
+            $table->text('prerequest_data')->nullable();
+            $table->text('payment_success_data')->nullable();
+            $table->text('payment_error_data')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
             $table->timestamp('deleted_at')->nullable();

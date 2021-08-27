@@ -9,7 +9,10 @@ use Model;
  */
 class WmMerchant extends Model
 {
-    const PAYMENT_STEP_CREATE = 0;
+    const PAYMENT_STEP_CREATE          = 0;
+    const PAYMENT_STEP_PREREQUEST      = 1;
+    const PAYMENT_STEP_SUCCESS_REQUEST = 2;
+    const PAYMENT_STEP_ERROR_REQUEST   = 3;
 
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\SoftDelete;

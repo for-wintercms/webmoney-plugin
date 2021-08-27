@@ -1,6 +1,5 @@
 1.0.0:
     - 'First version of WebMoney'
 1.0.1:
-    - 'Created table ds_webmoney_wm_merchants'
+    - 'WM Merchant functional'
     - builder_table_create_ds_webmoney_wm_merchants.php
-    - WM Merchant first step

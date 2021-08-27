@@ -1,6 +1,6 @@
 <?php
 
-// Webmoney
+// WebMoney Merchant
 Route::post('pay/webmoney/result', function () {
-    return 'YES';
+    return \DS\WebMoney\Classes\WmMerchantHelper::instance();
 });
