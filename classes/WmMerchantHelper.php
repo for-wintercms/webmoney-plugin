@@ -122,20 +122,23 @@ class WmMerchantHelper
 
             if (! $isPrerequest && ! $isPaymentSuccess && ! $isPaymentError)
                 return '?';
-            if ($paymentMode == -1 || ($paymentMode !== 0 && $paymentMode !== 1))
-                return '?';
-            if ($paymentMode === 1 && ! Config::get('ds.webmoney::wm_merchant.test_mode', false))
-                return 'Test mode?';
+
+            // check payment number
             if ($paymentNumber <= 1 || $paymentNumber > 999999999999999)
                 return '?';
 
             $merchant = WmMerchant::where('payment_no', $paymentNumber)->first();
-
             if (! $merchant || $merchant->payment_no != $paymentNumber)
                 return Lang::get('ds.webmoney::lang.wmmerchanthelper.payment_not_found');
 
             if (! $isPaymentError)
             {
+                // check payment mode
+                if ($paymentMode == -1 || ($paymentMode !== 0 && $paymentMode !== 1))
+                    return '?';
+                if ($paymentMode === 1 && ! Config::get('ds.webmoney::wm_merchant.test_mode', false))
+                    return 'Test mode?';
+
                 // check payee purse
                 $payeePurse = $resultData['LMI_PAYEE_PURSE'] ?? 0;
                 if (empty($payeePurse) || $merchant->payee_purse !== $payeePurse)
