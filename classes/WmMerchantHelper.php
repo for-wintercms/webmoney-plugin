@@ -143,7 +143,7 @@ class WmMerchantHelper
 
                 // check payment amount
                 $paymentAmount = $resultData['LMI_PAYMENT_AMOUNT'] ?? 0;
-                if (empty($paymentAmount) || $merchant->payment_amount !== $paymentAmount)
+                if (empty($paymentAmount) || ! $this->comparePaymentAmount($merchant->payment_amount, $paymentAmount))
                     return Lang::get('ds.webmoney::lang.wmmerchanthelper.invalid_payment_amount');
             }
 
@@ -206,5 +206,17 @@ class WmMerchantHelper
         catch (\Exception $e) {
             return 'ERROR!';
         }
+    }
+
+    /**
+     * Compare payment amount
+     *
+     * @param $price1
+     * @param $price2
+     * @return bool
+     */
+    protected function comparePaymentAmount($savedPrice, $checkPrice): bool
+    {
+        return (($checkPrice+0.001) > $savedPrice && ($checkPrice-0.001) < $savedPrice);
     }
 }
