@@ -22,7 +22,7 @@ class WmMerchantHelper
      */
     public function checkRequiredPaymentData(array $productData): bool
     {
-        return (! empty($productData['LMI_PAYMENT_AMOUNT']) && is_double($productData['LMI_PAYMENT_AMOUNT']) && (double)$productData['LMI_PAYMENT_AMOUNT'] > 0 &&
+        return (! empty($productData['LMI_PAYMENT_AMOUNT']) && is_numeric($productData['LMI_PAYMENT_AMOUNT']) && (double)$productData['LMI_PAYMENT_AMOUNT'] > 0 &&
                 ! empty($productData['LMI_PAYMENT_DESC']) && mb_strlen($productData['LMI_PAYMENT_DESC']) > 0 &&
                 ! empty($productData['LMI_PAYEE_PURSE']) && mb_strlen($productData['LMI_PAYEE_PURSE']) == 13);
     }
