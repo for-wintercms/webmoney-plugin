@@ -63,9 +63,9 @@ class WmMerchantHelper
      * Create payment (save in DB)
      *
      * @param array $paymentData
-     * @return bool
+     * @return array
      */
-    public function createPayment(array $paymentData): bool
+    public function createPayment(array $paymentData): array
     {
         // chek required payment data
         if (! $this->checkRequiredPaymentData($paymentData))
@@ -97,9 +97,9 @@ class WmMerchantHelper
         // create payment
         $merchant = WmMerchant::create($createData);
 
-        Event::fire('ds.webmoney.create_merchant_payment', $merchant);
+        Event::fire('ds.webmoney.create_merchant_payment', [$merchant, $paymentData]);
 
-        return true;
+        return $paymentData;
     }
 
     /**

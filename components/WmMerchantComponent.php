@@ -29,8 +29,6 @@ class WmMerchantComponent extends ComponentBase
             'LMI_PAYEE_PURSE'    => '',
         ]], true);
 
-        WmMerchantHelper::instance()->createPayment($productData);
-
-        return $productData;
+        return WmMerchantHelper::instance()->createPayment($productData);
     }
 }
