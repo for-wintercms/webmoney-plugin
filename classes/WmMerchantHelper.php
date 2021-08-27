@@ -181,7 +181,7 @@ class WmMerchantHelper
                 $hash .= $resultData['LMI_SYS_INVS_NO'] ?? '';
                 $hash .= $resultData['LMI_SYS_TRANS_NO'] ?? '';
                 $hash .= $resultData['LMI_SYS_TRANS_DATE'] ?? '';
-                $hash .= $resultData['LMI_SECRET_KEY'] ?? '';
+                $hash .= $secretKey;
                 $hash .= $resultData['LMI_PAYER_PURSE'] ?? '';
                 $hash .= $resultData['LMI_PAYER_WM'] ?? '';
 
