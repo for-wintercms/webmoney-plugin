@@ -197,7 +197,8 @@ class WmMerchantHelper
             }
 
             // Save result
-            $merchant->save([$saveField => $resultData]);
+            $merchant->$saveField = $resultData;
+            $merchant->save();
 
             Event::fire('ds.webmoney.merchant_results_processing.save_request', [$merchant, $resultData]);
 
