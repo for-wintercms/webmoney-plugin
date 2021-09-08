@@ -3,3 +3,6 @@
 1.0.1:
     - 'WM Merchant functional'
     - builder_table_create_ds_webmoney_wm_merchants.php
+1.0.2:
+    - 'Updated table ds_webmoney_wm_merchants'
+    - builder_table_update_ds_webmoney_wm_merchants.php
