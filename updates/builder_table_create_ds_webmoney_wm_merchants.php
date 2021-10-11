@@ -15,7 +15,7 @@ class BuilderTableCreateDsWebmoneyWmMerchants extends Migration
             $table->bigIncrements('id')->unsigned();
             $table->bigInteger('payment_no')->unsigned()->unique();
             $table->string('payee_purse', 13);
-            $table->decimal('payment_amount', 7, 2);
+            $table->decimal('payment_amount', 11, 2);
             $table->string('payment_desc', 256);
             $table->smallInteger('pay_step')->unsigned();
             $table->smallInteger('payment_mode')->nullable();

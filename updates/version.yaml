@@ -4,5 +4,4 @@
     - 'WM Merchant functional'
     - builder_table_create_ds_webmoney_wm_merchants.php
 0.0.3:
-    - 'Updated table ds_webmoney_wm_merchants'
-    - builder_table_update_ds_webmoney_wm_merchants.php
+    - 'Updated migrations'
